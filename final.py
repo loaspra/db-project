@@ -1,7 +1,7 @@
 import psycopg2
 
 def persona(cur):
-    file_per = open("csv_files/persona1M.csv")
+    file_per = open("csv_files/persona1000000.csv")
     linea = file_per.readline()
     cur = "INSERT INTO persona VALUES "  # cola a ejecutar
     while(linea):
@@ -13,8 +13,8 @@ def persona(cur):
     cur += ";"
     return cur
 
-def trabajador(cur):
-    file_per = open("csv_files/trabajador1M.csv")
+def trabajador(cur): 
+    file_per = open("csv_files/trabajador1000000.csv")
     linea = file_per.readline()
     cur = "INSERT INTO trabajador VALUES "  # cola a ejecutar
     while(linea):
@@ -27,7 +27,7 @@ def trabajador(cur):
     return cur
 
 def cliente(cur):
-    file_per = open("csv_files/cliente1M.csv")
+    file_per = open("csv_files/cliente1000000.csv")
     linea = file_per.readline()
     cur = "INSERT INTO cliente VALUES "  # cola a ejecutar
     while(linea):
@@ -40,7 +40,7 @@ def cliente(cur):
     return cur
 
 def usuario(cur):
-    file_per = open("csv_files/users1M.csv")
+    file_per = open("csv_files/users1000000.csv")
     linea = file_per.readline()
     cur = "INSERT INTO usuario VALUES "  # cola a ejecutar
     while(linea):
@@ -53,7 +53,7 @@ def usuario(cur):
     return cur
 
 def local_de_pizza(cur):
-    file_per = open("csv_files/local_de_pizza1M.csv")
+    file_per = open("csv_files/local_de_pizza1000000.csv")
     linea = file_per.readline()
     cur = "INSERT INTO localdepizza VALUES "  # cola a ejecutar
     while(linea):
@@ -66,7 +66,7 @@ def local_de_pizza(cur):
     return cur
 
 def cl_usuario(cur):
-    file_per = open("csv_files/cl_usuario1M.csv")
+    file_per = open("csv_files/cl_usuario1000000.csv")
     linea = file_per.readline()
     cur = "INSERT INTO cl_usuario VALUES "  # cola a ejecutar
     while(linea):
@@ -79,7 +79,7 @@ def cl_usuario(cur):
     return cur
 
 def rol(cur):
-    file_per = open("csv_files/rol1M.csv")
+    file_per = open("csv_files/rol1000000.csv")
     linea = file_per.readline()
     cur = "INSERT INTO rol VALUES "  # cola a ejecutar
     while(linea):
@@ -92,7 +92,7 @@ def rol(cur):
     return cur
 
 def turno(cur):
-    file_per = open("csv_files/turno1M.csv")
+    file_per = open("csv_files/turno1000000.csv")
     linea = file_per.readline()
     cur = "INSERT INTO turno VALUES "  # cola a ejecutar
     while(linea):
@@ -105,7 +105,7 @@ def turno(cur):
     return cur
 
 def ingredientes(cur):
-    file_per = open("csv_files/ingrediente1M.csv")
+    file_per = open("csv_files/ingrediente1000000.csv")
     linea = file_per.readline()
     cur = "INSERT INTO ingrediente VALUES "  # cola a ejecutar
     while(linea):
@@ -118,7 +118,7 @@ def ingredientes(cur):
     return cur
 
 def pedido(cur):
-    file_per = open("csv_files/Pedido1M.csv")
+    file_per = open("csv_files/Pedido1000000.csv")
     linea = file_per.readline()
     cur = "INSERT INTO pedido VALUES "  # cola a ejecutar
     while(linea):
@@ -131,7 +131,7 @@ def pedido(cur):
     return cur
 
 def pedido_bebida(cur):
-    file_per = open("csv_files/pedido_bebida1M.csv")
+    file_per = open("csv_files/pedido_bebida1000000.csv")
     linea = file_per.readline()
     cur = "INSERT INTO pedido_bebida VALUES "  # cola a ejecutar
     while(linea):
@@ -144,7 +144,7 @@ def pedido_bebida(cur):
     return cur
 
 def pedido_pizza(cur):
-    file_per = open("csv_files/pedido_pizza1M.csv")
+    file_per = open("csv_files/pedido_pizza1000000.csv")
     linea = file_per.readline()
     cur = "INSERT INTO pedido_pizza VALUES "  # cola a ejecutar
     while(linea):
@@ -157,7 +157,7 @@ def pedido_pizza(cur):
     return cur
 
 def pizza(cur):
-    file_per = open("csv_files/pizza1M.csv")
+    file_per = open("csv_files/pizza1000000.csv")
     linea = file_per.readline()
     cur = "INSERT INTO pizza VALUES "  # cola a ejecutar
     while(linea):
@@ -170,7 +170,7 @@ def pizza(cur):
     return cur
 
 def bebida(cur):
-    file_per = open("csv_files/bebida1M.csv")
+    file_per = open("csv_files/bebida1000000.csv")
     linea = file_per.readline()
     cur = "INSERT INTO bebida VALUES "  # cola a ejecutar
     while(linea):
@@ -183,7 +183,7 @@ def bebida(cur):
     return cur
 
 def usuario_rol(cur):
-    file_per = open("csv_files/usu_rol1M.csv")
+    file_per = open("csv_files/usu_rol1000000.csv")
     linea = file_per.readline()
     cur = "INSERT INTO usu_rol VALUES "  # cola a ejecutar
     while(linea):

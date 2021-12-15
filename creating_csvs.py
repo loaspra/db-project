@@ -11,7 +11,7 @@ import numpy as np
 # 'PizzaIngrediente', 'bebida', 'Cl_Usuario', 
 # 'Usu_Rol', 'Turno', 'Boleta', 'Pedido_Bebida', 'Pedido_Pizza']
 
-cant_datos = 1000
+cant_datos = 1000000
 pbebida = round(cant_datos/63)
 p_pizza =round(cant_datos/40) # hay 40 pizzas
 n_per = cant_datos*2
@@ -26,7 +26,7 @@ inicio_fech = datetime.fromisoformat('2011-11-14 00:12:12')
 
 #Persona
 referen = []
-with open('csv_files/persona1M.csv', 'w', newline='') as csvfile:
+with open('csv_files/persona1000000.csv', 'w', newline='') as csvfile:
     print("Generating data for Persona")
     esc = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
     dni_init = 200000000
@@ -45,7 +45,7 @@ csvfile.close()
 #cliente
 print("Cliente")
 n_clientes = 0
-with open('csv_files/cliente1M.csv', 'w', newline='') as csvfile:
+with open('csv_files/cliente1000000.csv', 'w', newline='') as csvfile:
     esc = csv.writer(csvfile, delimiter=',', quotechar = " ", quoting=csv.QUOTE_MINIMAL)
     for i in range(0,int(n_per/2)):
         linea = ["('DNI'"]
@@ -59,7 +59,7 @@ distritos = ['Ancón','Ate','Barranco','Breña','Carabayllo','Chaclacayo','Chorr
 
 #TRABAJADOR
 print("Trabajador")
-with open('csv_files/trabajador1M.csv', 'w', newline='') as csvfile:
+with open('csv_files/trabajador1000000.csv', 'w', newline='') as csvfile:
     esc = csv.writer(csvfile, delimiter=' ',quotechar = " " , quoting=csv.QUOTE_MINIMAL)
     for i in referen:
         cisa = ''.join(random.choice(leter) for i in range(random.randrange(10,20)))
@@ -78,7 +78,7 @@ referen = []
 
 #Ingrediente
 print("Ingrediente")
-with open('csv_files/ingrediente1M.csv', 'w', newline='') as csvfile:
+with open('csv_files/ingrediente1000000.csv', 'w', newline='') as csvfile:
     esc = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
     for i in range(0,50):
         linea = []
@@ -91,7 +91,7 @@ tamaños = ['personal', 'mediana', 'grande', 'familiar']
 
 #Pizza
 print("Pizza")
-with open('csv_files/pizza1M.csv', 'w', newline='') as csvfile:
+with open('csv_files/pizza1000000.csv', 'w', newline='') as csvfile:
     esc = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
     for i in range(0,20):
         name = "".join(random.choice(leter) for i in range(random.randrange(5,10)))
@@ -130,8 +130,8 @@ permisos = ["create db", "cannot login", "create rol", "replication", "bypassRLS
 
 #Usuarios
 print("Usuarios")
-with open('csv_files/users1M.csv', 'w', newline='') as csvfile:
-    with open("csv_files/trabajador1M.csv", newline='') as aux:
+with open('csv_files/users1000000.csv', 'w', newline='') as csvfile:
+    with open("csv_files/trabajador1000000.csv", newline='') as aux:
         parent = csv.reader(aux, delimiter = ' ', quotechar = ' ', quoting=csv.QUOTE_MINIMAL)
         usuarios_t = []
         for row in parent:
@@ -160,8 +160,8 @@ csvfile.close()
 
 # Local de Pizza
 print("Local de Pizza")
-with open('csv_files/local_de_pizza1M.csv', 'w', newline='') as csvfile:
-    with open("csv_files/trabajador1M.csv", newline='') as aux:
+with open('csv_files/local_de_pizza1000000.csv', 'w', newline='') as csvfile:
+    with open("csv_files/trabajador1000000.csv", newline='') as aux:
         parent = csv.reader(aux, delimiter = ',', quotechar = '|', quoting=csv.QUOTE_MINIMAL)
         referen = []
         for row in parent:
@@ -183,10 +183,10 @@ csvfile.close()
 
 #Pedido
 print("Pedido")
-with open('csv_files/Pedido1M.csv', 'w', newline='') as csvfile:
+with open('csv_files/Pedido1000000.csv', 'w', newline='') as csvfile:
     permisos = ["create db", "cannot login", "create rol", "replication", "bypassRLS"]
     esc = csv.writer(csvfile, delimiter=' ',quotechar = " " , quoting=csv.QUOTE_MINIMAL)
-    with open("csv_files/cliente1M.csv", 'r', newline='') as ref:
+    with open("csv_files/cliente1000000.csv", 'r', newline='') as ref:
         parent = csv.reader(ref, delimiter = ',', quotechar = '|', quoting=csv.QUOTE_MINIMAL)
         referen_cl = []
         for row in parent:
@@ -222,15 +222,15 @@ csvfile.close()
 
 #PizzaIngrediente
 print("Pizza-Ingrediente")
-with open('csv_files/pizzaingrediente1M.csv', 'w', newline='') as csvfile:
-    with open("csv_files/pizza1M.csv", newline='') as aux:
+with open('csv_files/pizzaingrediente1000000.csv', 'w', newline='') as csvfile:
+    with open("csv_files/pizza1000000.csv", newline='') as aux:
         parent = csv.reader(aux, delimiter = ',', quotechar = '|', quoting=csv.QUOTE_MINIMAL)
         referen = []
         for row in parent:
             referen.append(row[0:2])  #Lp_direeccion, lp_telefono
     aux.close()
 
-    with open("csv_files/ingrediente1M.csv", 'r', newline='') as ref:
+    with open("csv_files/ingrediente1000000.csv", 'r', newline='') as ref:
         parent_ing = csv.reader(ref, delimiter = ',', quotechar = '|', quoting=csv.QUOTE_MINIMAL)
         referen_cl = []
         for row in parent_ing:
@@ -255,7 +255,7 @@ csvfile.close()
 #Bebida
 print("Bebidas")
 #bebidas = ['7 Up','A&W Root Beer','Barq\'s Root Beer','Canada Dry Ginger Ale','Cherry Coca-Cola','Coca-Cola Classic','Coca-Cola Zero','Diet Coca-Cola','Diet Dr. Pepper','Diet Pepsi','Dr. Pepper','Fanta Orange','Fresca','Mountain Dew','Mountain Dew Code Red','Mug Root Beer','Orange Crush','Pepsi','Sierra Mist','Sprite','Vanilla Coca-Cola','Wild Cherry Pepsi']
-with open('csv_files/bebida1M.csv', 'w', newline='') as csvfile:
+with open('csv_files/bebida1000000.csv', 'w', newline='') as csvfile:
     esc = csv.writer(csvfile, delimiter=' ',quotechar = " " , quoting=csv.QUOTE_MINIMAL)
     bebidas = range(100,115)
     for i in bebidas: #67 bebidas
@@ -274,8 +274,8 @@ csvfile.close()
 
 # Cliente-usuario
 print("Cliente-usuario")
-with open('csv_files/cl_usuario1M.csv', 'w', newline='') as csvfile:
-    with open("csv_files/cliente1M.csv", newline='') as aux:
+with open('csv_files/cl_usuario1000000.csv', 'w', newline='') as csvfile:
+    with open("csv_files/cliente1000000.csv", newline='') as aux:
         parent = csv.reader(aux, delimiter = ',', quotechar = '|', quoting=csv.QUOTE_MINIMAL)
         referen = []
         for row in parent:
@@ -297,7 +297,7 @@ csvfile.close()
 #Rol
 print("Rol")
 roles = ['administrador', 'gerente', 'asistente', 'ayudante', 'laburador', 'españa', 'cliente']
-with open('csv_files/rol1M.csv', 'w', newline='') as csvfile:
+with open('csv_files/rol1000000.csv', 'w', newline='') as csvfile:
     permisos = ["create db", "cannot login", "create rol", "replication", "bypassRLS"]
     esc = csv.writer(csvfile, delimiter=' ',quotechar = " " , quoting=csv.QUOTE_MINIMAL)
     for i in roles:
@@ -309,14 +309,14 @@ csvfile.close()
 
 # usuario rol
 print("usuario-rol")
-with open("csv_files/usu_rol1M.csv",'w',  newline='') as csvfile:
-    with open("csv_files/users1M.csv", newline='') as aux:
+with open("csv_files/usu_rol1000000.csv",'w',  newline='') as csvfile:
+    with open("csv_files/users1000000.csv", newline='') as aux:
         parent = csv.reader(aux, delimiter = ',', quotechar = '|', quoting=csv.QUOTE_MINIMAL)
         referen = []
         for row in parent:
             referen.append(row[0][2:])  #Lp_direeccion, lp_telefono
     aux.close()
-    with open("csv_files/rol1M.csv", newline='') as aux:
+    with open("csv_files/rol1000000.csv", newline='') as aux:
         parent = csv.reader(aux, delimiter = ',', quotechar = '|', quoting=csv.QUOTE_MINIMAL)
         referen_r = []
         for row in parent:
@@ -335,7 +335,7 @@ with open("csv_files/usu_rol1M.csv",'w',  newline='') as csvfile:
 #Turno
 print("Turno")
 fecha = inicio_fech
-with open('csv_files/turno1M.csv', 'w', newline='') as csvfile:
+with open('csv_files/turno1000000.csv', 'w', newline='') as csvfile:
     esc = csv.writer(csvfile, delimiter=' ',quotechar = " " , quoting=csv.QUOTE_MINIMAL)
     aydi = 1
     for i in range(0,n_turno):
@@ -352,8 +352,8 @@ csvfile.close()
 
 #BOleta
 print("Boleta")
-with open("csv_files/boleta1M.csv",'w', newline='') as csvfile: 
-    with open("csv_files/trabajador1M.csv", newline='') as aux:
+with open("csv_files/boleta1000000.csv",'w', newline='') as csvfile: 
+    with open("csv_files/trabajador1000000.csv", newline='') as aux:
         parent = csv.reader(aux, delimiter = ',', quotechar = '|', quoting=csv.QUOTE_MINIMAL)
         referen = []
         for row in parent:
@@ -375,8 +375,8 @@ with open("csv_files/boleta1M.csv",'w', newline='') as csvfile:
 
 #pedido bebida
 print("Pedido-bebida")
-with open("csv_files/pedido_bebida1M.csv",'w', newline = "") as csvfile: 
-    with open("csv_files/bebida1M.csv", newline='') as aux:
+with open("csv_files/pedido_bebida1000000.csv",'w', newline = "") as csvfile: 
+    with open("csv_files/bebida1000000.csv", newline='') as aux:
         parent = csv.reader(aux, delimiter = ',', quotechar = '|', quoting=csv.QUOTE_MINIMAL)
         referen = []
         for row in parent:
@@ -396,8 +396,8 @@ with open("csv_files/pedido_bebida1M.csv",'w', newline = "") as csvfile:
 
 #pedido pizza
 print("Pedido-pizza")
-with open("csv_files/pedido_pizza1M.csv",'w', newline = "") as csvfile: 
-    with open("csv_files/pizza1M.csv", newline='') as aux:
+with open("csv_files/pedido_pizza1000000.csv",'w', newline = "") as csvfile: 
+    with open("csv_files/pizza1000000.csv", newline='') as aux:
         parent = csv.reader(aux, delimiter = ',', quotechar = '|', quoting=csv.QUOTE_MINIMAL)
         referen = []
         for row in parent:
